@@ -3,12 +3,12 @@ version: '3.8'
 services:
   api:
     build:
-      context: ./api-gendocs
+      context: ./api
     container_name: API
     ports:
       - "80:80"
     volumes:
-      - ./api-gendocs:/app
+      - ./api:/app
     environment:
       - HOST=0.0.0.0
       - PORT=80

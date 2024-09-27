@@ -269,6 +269,34 @@ def get_data(title):
     # json_to_md(data, filename="output.md")
     return data
 
+def checkTitle(title):
+    system_message = (
+        "You are an expert in software development and systems architecture. "
+        "Your task is to evaluate if a given title could plausibly represent a software project. "
+        "Respond **only** with 'true' or 'false'. Do not provide any explanations or additional information."
+    )
+    
+    user_message = f"Is '{title}' a plausible software project title? Answer only 'true' or 'false'. Do not provide any explanations or additional information."
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": system_message,
+            },
+            {
+                "role": "user",
+                "content": user_message,
+            },
+        ],
+        model="mixtral-8x7b-32768",
+        temperature=0,
+        stream=False,
+    )
+    
+    return chat_completion.choices[0].message.content.strip().strip('.')
+
+
 @app.get("/")
 def read_root():
     return {"message": "Hello from FastAPI"}
@@ -276,7 +304,11 @@ def read_root():
 @app.post("/input")
 def read_root(data: TitleInput):
     title = data.title
-    data = get_data(title)
+    if(checkTitle(title)=='True'):
+        data = get_data(title)
+    else:
+       data = 0
+    
     return data
 
 

@@ -19,3 +19,5 @@ build/
 # Dependencias de paquetes lock
 package-lock.json
 
+
+__pycache__/

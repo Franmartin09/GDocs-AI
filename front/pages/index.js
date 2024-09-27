@@ -4,6 +4,7 @@ import Form from '../components/Form';
 import LoadingScreen from '../components/LoadingScreen';
 import Response from '../components/Response';
 import LoginModal from '../components/LoginModal';
+import InfoModal from '../components/InfoModal';
 
 export default function Home() {
   const [message, setMessage] = useState('');
@@ -11,6 +12,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // Controla la visibilidad del modal
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false); // Controla la visibilidad del InfoModal
+  const [infoModalMessage, setInfoModalMessage] = useState(''); // Mensaje para el InfoModal
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -28,8 +31,14 @@ export default function Home() {
         body: JSON.stringify({ title: inputValue }), 
       });
       const result = await response.json();
-      console.log('Response:', result);
-      setData(result);
+      // console.log('Response:', result);
+      if (result != 0){
+        setData(result);
+      }
+      else{
+        setInfoModalMessage('Error: El input no encaja con ningun proyecto de software');
+        setIsInfoModalOpen(true);
+      }
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -48,7 +57,14 @@ export default function Home() {
       {/* Login Modal */}
       <LoginModal 
         isOpen={isLoginModalOpen} 
-        onClose={() => setIsLoginModalOpen(false)} // Cierra el modal cuando se haga clic en "Close"
+        onClose={() => setIsLoginModalOpen(false)}
+      />
+
+      {/* Info Modal */}
+      <InfoModal 
+        isOpen={isInfoModalOpen} 
+        onClose={() => setIsInfoModalOpen(false)} 
+        message={infoModalMessage}
       />
 
       {loading ? (
