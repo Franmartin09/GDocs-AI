@@ -1,0 +1,143 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenedor principal ocupe el espacio restante */
+    padding: 0 1rem;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #414141;
+    margin-bottom: 2rem;
+  }
+  
+  .inputContainer {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #bebebe;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-color: #e4e4e4;
+    color: #000000;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #0070f3;
+  }
+  
+  .submitButton {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submitButton:hover {
+    background-color: #0051a2;
+  }
+  
+  .suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .suggestionButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #e4e4e4;
+    color: #333333;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .suggestionButton:hover {
+    background-color: #d3d3d3;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid #dfdfdf;
+    position: fixed; /* Fijo al final */
+    bottom: 0; /* Posición al fondo */
+    left: 0;
+    right: 0;
+    background-color: white; /* Fondo blanco para el footer */
+  }
+  
+  .link {
+    color: #000;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.2s;
+  }
+  
+  .link:hover {
+    color: #888;
+  }
+  
+  .loginButton{
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    padding: 9px 14px; /* Espaciado interno para el botón */
+    background-color: #181f3b; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
+  }
+
+  .loginButton:hover {
+    background-color: #11162a; /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Ligera elevación */
+  }
+  
+  /* Efecto al hacer clic */
+  .loginButton:active {
+    transform: translateY(0); /* Vuelve a su posición original */
+  }

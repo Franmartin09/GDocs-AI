@@ -1,0 +1,50 @@
+/* Overlay for the modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it is above all other elements */
+  opacity: 0;
+  pointer-events: none; /* Initially disabled pointer events */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Active overlay (shown) */
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto; /* Enable pointer events when modal is active */
+}
+
+/* Modal content box */
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+  transform: scale(0.8); /* Initially shrink the modal */
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth scaling and fading */
+}
+
+/* Modal active state (when it should appear) */
+.modal.active {
+  transform: scale(1); /* Back to original size */
+  opacity: 1; /* Fade in */
+}
+
+.closeButton {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}

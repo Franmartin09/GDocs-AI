@@ -1,0 +1,29 @@
+/* pages/404.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: #ff0000;
+  }
+  
+  .description {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .homeLink {
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
