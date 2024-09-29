@@ -13,7 +13,7 @@ class GeneralRequirements(BaseModel):
     general_requirements: List[str] 
     functional_requirements: List[str] 
     system_scope: List[str]
-    author_information: str
+    legality_information: str
 
 
 class ProcedureSpecifications(BaseModel):
@@ -70,8 +70,13 @@ class RelevantAspects(BaseModel):
     relevant_aspects: List[str] 
 
 
+# Define the Pydantic model for the input data
+class TitleInput(BaseModel):
+    title: str
+
 # Clase principal que agrupa toda la documentación del proyecto
 class SoftwareProjectDocumentation(BaseModel):
+    title: TitleInput
     general_definition: GeneralDefinition
     requirements: Requirements
     system_architecture: SystemArchitecture
@@ -79,9 +84,3 @@ class SoftwareProjectDocumentation(BaseModel):
     service_description: ServiceDescription
     tecnic_documentation: ApiSpecification
     relevant_aspects: Optional[RelevantAspects] = None
-
-
-
-# Define the Pydantic model for the input data
-class TitleInput(BaseModel):
-    title: str

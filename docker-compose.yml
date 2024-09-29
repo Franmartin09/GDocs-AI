@@ -16,12 +16,12 @@ services:
 
   # nextjs:
   #   build:
-  #     context: ./front-gendocs
+  #     context: ./front
   #   container_name: FRONT
   #   ports:
   #     - "3000:3000"
   #   volumes:
-  #     - ./front-gendocs:/app
+  #     - ./front:/app
   #   environment:
   #     - HOST=0.0.0.0
   #     - PORT=3000

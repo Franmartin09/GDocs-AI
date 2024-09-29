@@ -78,6 +78,7 @@ export default function Home() {
           handleInputChange={handleInputChange}
           message={message}
           openLoginModal={() => setIsLoginModalOpen(true)} // Abre el modal cuando se haga clic en "Login"
+          setInputValue={setInputValue} // Pass the setter for input value
         />
       )}
     </div>

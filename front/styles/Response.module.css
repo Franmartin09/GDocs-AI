@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.document {
+  background-color: #fff; /* White background for the document */
+  padding: 40px;
+  width: 70%; /* Centralized width */
+  max-width: 900px; /* Limit max width to avoid too wide text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the document */
+  border-left: 10px solid #d3d3d3; /* Grey bars on the sides */
+  border-right: 10px solid #d3d3d3;
+  position: relative;
+}
+
+.editButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.editButton i {
+  color: #888; /* Light color for the pencil icon */
+  transition: color 0.3s;
+}
+
+.editButton:hover i {
+  color: #000; /* Darker color on hover */
+}
+
+.printButton {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+  color: #000000 !important;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 20px 0; 
+  color: #555 !important;
+}
+
+.module_h1 {
+  margin: 50px 0 0 0;
+}
+
+.module_architecture {
+  margin: 0 0 40px 0;
+}
+
+
+
+/* h1, h2, h3, h4, h5 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+pre {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+ */
+
+/* Estilos de impresión */
+@media print {
+  /* Elimina fondos y sombras para la impresión */
+  .container {
+    background-color: white;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .document {
+    background-color: #fff; /* White background for the document */
+    padding: 40px;
+    width: 100%; /* Centralized width */
+    max-width: 100vw !important; /* Limit max width to avoid too wide text */
+    box-shadow: none; /* Soft shadow for the document */
+    border-left: none; /* Grey bars on the sides */
+    border-right: none;
+    position: relative;
+  }
+
+  /* Ajusta márgenes y padding para imprimir mejor */
+  /* body {
+    margin: 1cm;
+    padding: 0;
+  } */
+
+  /* h1, h2, h3 {
+    color: #000; 
+  }
+
+  p, li {
+    font-size: 12pt;
+  } */
+
+  /* Oculta botones o elementos que no se deben imprimir */
+  .editButton, .printButton {
+    display: none;
+  }
+
+}
+
